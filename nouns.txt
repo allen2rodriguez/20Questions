@@ -1,0 +1,7 @@
+10000 Does it move?
+15000 Is it a person?
+5000 Is it a plant?
+
+
+//Living thing (nonfictional)
+//Plants, fungui,  portista/ animals, humnans 
