@@ -1,7 +1,10 @@
-10000 Does it move?
-15000 Is it a person?
-5000 Is it a plant?
+10000 Is this person alive?
+15000 Is this person famous? 
+20000 Is this person an entertainer?
+25000 Is this person a musician?
+17500 Is this person a politician? 
+22500 Is this person an actor?
+ 
 
-
-//Living thing (nonfictional)
-//Plants, fungui,  portista/ animals, humnans 
+//Looking at dead or ficitonal charactors 
+5000 Is this person fictional? 
