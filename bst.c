@@ -80,9 +80,8 @@ void printNode(struct node* root)
 
             if (input == 'n') { //---Incorrect guess
                 printf("You win!\n");
-
-
-                //Add in 2 new nodes and write to file if
+                
+                createNewNode(current);
             }
 
             break;
@@ -93,6 +92,27 @@ void printNode(struct node* root)
 /*=================================================================
     update the file with a the new node if computer was wrong 
 =================================================================*/
+void createNewNode(struct node* parent)
+{
+    struct node* root;
+
+    int newData1 = parent->data / 2 - parent->data;
+    int newData2 = parent->data / 2 + newData1;
+
+    char newAnswer[255];
+    char newQuestion[255];
+
+    printf("What was it? ");
+    scanf(" %s", &newAnswer);
+
+    printf("What would would have been a good quesiton to ask? ");
+    scanf(" %s", &newQuestion);
+
+    insert(&root, newData1, newQuestion, ""); //Inserts the new Question
+    insert(&root, newData2, "", newAnswer); //Inserts the Answer
+
+    //Write to the file 
+}
 
 /*===================================================
     Creates the instance of the tree to be used 
