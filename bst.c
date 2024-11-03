@@ -97,10 +97,10 @@ void createNewNode(struct node* parent)
     struct node* root;
 
     int newData1 = parent->data / 2 - parent->data;
-    int newData2 = parent->data / 2 + newData1;
+    int newData2 = newData1 / 2 + newData1;
 
-    char newAnswer[255];
-    char newQuestion[255];
+    char newAnswer[MAX_STR_LEN];
+    char newQuestion[MAX_STR_LEN];
 
     printf("What was it? ");
     scanf(" %s", &newAnswer);
@@ -108,10 +108,14 @@ void createNewNode(struct node* parent)
     printf("What would would have been a good quesiton to ask? ");
     scanf(" %s", &newQuestion);
 
-    insert(&root, newData1, newQuestion, ""); //Inserts the new Question
-    insert(&root, newData2, "", newAnswer); //Inserts the Answer
+    //Write to the file
+    char filename[] = "nouns.txt";
+    FILE* fp = fopen(filename, "a");
 
-    //Write to the file 
+    fprintf(fp, "%d %s\n", newData1, newQuestion);
+    fprintf(fp, "%d %s\n", newData2, newAnswer);
+
+    fclose(fp);
 }
 
 /*===================================================
